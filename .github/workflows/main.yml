@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Greeting
-        run: Write-Output "Hello, world!"
+        run: Write-Host "Hello, world!"
 
       - name: Simulate an error
-        run:  Write-Output "About to fail" ; exit 1
+        run:  Write-Host"About to fail" ; exit 1
 
       - name: Another greeting
-        run: Write_Output "Hello, world!"
+        run: Write-Host "Hello, world!"
