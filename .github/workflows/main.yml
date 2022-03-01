@@ -1,16 +1,32 @@
-name: CI
+name: Node CI
 
-on: push
+on:
+  push:
+    branches: master
+    paths-ignore:
+      - "docs/**"
+      
+  pull_request:
+    branches: master
+    paths-ignore:
+      - "docs/**"
 
 jobs:
   build:
-    runs-on: windows - powershell
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
 
-      - name: Greeting
-        run: Write-Host "Hello, world!"
+      - name: Install 🔧
+        run: npm install
 
-      - name: Another greeting
-        run: Write-Host "Hello, world!"
+      - name: Lint 🧐
+        run: npm run lint:check
+
+      - name: Test 🚨
+        run: npm test
+
+      - name: Build 🏗️
+        run: npm run build
