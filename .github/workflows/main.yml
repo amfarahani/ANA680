@@ -12,8 +12,5 @@ jobs:
       - name: Greeting
         run: Write-Host "Hello, world!"
 
-      - name: Simulate an error
-        run:  Write-Host"About to fail" ; exit 1
-
       - name: Another greeting
         run: Write-Host "Hello, world!"
