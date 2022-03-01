@@ -9,5 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo "Hello, world!"
+      - name: Greeting
+        run: Write-Output "Hello, world!"
+
+      - name: Simulate an error
+        run:  Write-Output "About to fail" ; exit 1
+
+      - name: Another greeting
+        run: Write_Output "Hello, world!"
